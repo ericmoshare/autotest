@@ -1,0 +1,10 @@
+.*
+.project
+.class
+*.iml
+build
+bin
+logs
+classes
+out
+target/
