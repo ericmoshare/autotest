@@ -6,7 +6,7 @@
 
     <groupId>com.github.ericmoshare</groupId>
     <artifactId>autotest</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>autotest</name>
@@ -129,6 +129,12 @@
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -188,7 +194,7 @@
                     <charset>UTF-8</charset>
                     <encoding>UTF-8</encoding>
                     <docencoding>UTF-8</docencoding>
-                    <additionalparam>-Xdoclint:none</additionalparam>  <!-- TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
+                    <!--<additionalparam>-Xdoclint:none</additionalparam> -->
                 </configuration>
                 <executions>
                     <execution>
@@ -207,7 +213,7 @@
                 <configuration>
                     <excludes>
                         <exclude>*.properties</exclude>
-                        <exclude>logback.xml</exclude>
+                        <exclude>*.xml</exclude>
                     </excludes>
                 </configuration>
             </plugin>
