@@ -5,7 +5,7 @@ Autotest
 
 `Autotest` 为当前基于Java实现的企业级应用提供了一个简单的自动化测试框架, 基于模板方法设计并支持yaml文件格式.
 
-<p align="center"><img src="https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo.gif?raw=true"></p>
+<p align="center"><img src="https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo1.gif?raw=true"></p>
 
 
 ## 介绍
@@ -164,25 +164,21 @@ Java
 
 ```yaml
 -   name: '导入失败-参数错误[txAmount]'
-    error: '参数校验错误：importRecordDTO.list[0].txAmount[0]->txAmount:应该大于等于1;'
+    error: '参数校验错误：txAmount[0]->txAmount:应该大于等于1;'
     data:
     -   accDate: '20180602'
-        appCode: pawx
+        appCode: xxx
         checkBatchId: '123'
-        checkType: pay
-        recordType: target
         traceId: '1529045360051'
         txAmount: '0'
         txDate: '20180602'
         txStatus: success
--   name: '导入失败-参数错误[appCode]'
-    error: 'appCode=pawx1 的表不存在'
+-   name: '导入失败-参数错误'
+    error: 'appCode=xxx的表不存在'
     data:
     -   accDate: '20180602'
-        appCode: pawx1
+        appCode: xxx
         checkBatchId: '123'
-        checkType: pay
-        recordType: target
         traceId: '1529045360051'
         txAmount: '12'
         txDate: '20180602'
