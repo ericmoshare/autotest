@@ -212,7 +212,7 @@ Java
 ![Donate with Wechat][donate]
 
 
-<br/>
+
 [test4j]: https://github.com/test4j/test4j
 [demo]: https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo1.gif
 [donate]: https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/donate.JPG
