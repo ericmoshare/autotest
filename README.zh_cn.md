@@ -1,15 +1,14 @@
 Autotest
 -----
 
-[In Chinese 中文版](README.zh_cn.md)
+[In English Version](README.md)
 
-The `Autotest` provides a simple `framework` for modern Java-based enterprise applications - on any kind of deployment platform, 
-based on template-method design pattern which supported by `yaml`.
+`Autotest` 为当前基于Java实现的企业级应用提供了一个简单的自动化测试框架, 基于模板方法设计并支持yaml文件格式.
 
 
-## Installation
+## 介绍
 
-You can use maven, whom might become your `BFF`.
+你可以使用maven引入依赖包
 
 ```xml
 <dependency>
@@ -20,11 +19,11 @@ You can use maven, whom might become your `BFF`.
 
 ```
 
-## Why Autotest?
+## 为啥选 Autotest?
 
-You can simply extends `AbstractAutoTest` to fullfill your autotest-tasks, which might contains a lot of `Scenarios`.
+你可以通过简单地继承 `AbstractAutoTest`, 来实现你的自动化测试功能, 哪怕有众多的场景.
 
-Such as, 
+举个例子, 
 
 ```java
 public class SimpleAutoTest extends AbstractAutoTest {
@@ -50,9 +49,9 @@ public class SimpleAutoTest extends AbstractAutoTest {
 ```
 
 
-## How to use?
+## 怎么使用?
 
-You can create a yaml file with the same name as the Java class, use the structure as
+你可以创建一个 .yaml 格式的文件, 使用跟 `Java` 测试类相同的名字
 
 ```yaml
 #以下是示例yaml结构
@@ -75,19 +74,19 @@ You can create a yaml file with the same name as the Java class, use the structu
 ```
 
 
-### `getResourceAsStream`
+### 重写方法 `getResourceAsStream`
 
-`Autotest` provides a `Spring-jdbcTemplate`, which can simply fullfill all your fantasy about dataSource operations.
+`Autotest` 提供了一个`Spring` `jdbcTemplate`, 他能实现你对 `dataSource` 的所有 `Fantasy`
 
-Such as,
+举个例子, 
 
 ```sql
     clean("person"); //tableName
 ```
 
-The abstract method `getResourceAsStream()` should return inputStream, which contain dataSource information.
+重写方法 `getResourceAsStream()` 时应当返回一个填写了数据库信息的文件输入流 `inputStream`.
 
-Such as,
+举个例子, 
 
 application.properties
 ```properties
@@ -107,16 +106,14 @@ Java
 
 ```
 
-
-
-Be aware, if you dont need that, you can skiped..
+**注意**, 如果 不需要用到数据库操作, 可以不配置 application.properties
 
 
 ### `given`
 
-Through the method `given()` , you can do some preparation like clean table, insert, update, etc...
+通过方法 `given()` , 你可以做一些预操作, 比如清空数据库, 清空表, 插入数据, 更新数据等等...
 
-Such as
+举个例子, 
 
 ```java
     @Override
@@ -130,13 +127,13 @@ Such as
 
 ### `when`
 
-Through the method `when` , you can run your own target test.
+通过方法 `when`, 你可以执行你的测试代码.
 
 
 ### `expect`
-Through the method `expect` , you can store the results in case you want to verify the expectation.
+通过重写方法  `expect` , 你可以暂存你测试代码的运行结果, 如果你需要核对/校验测试结果的话.
 
-Such as,
+举个例子, 
 
 ```java
     @Override
@@ -158,9 +155,10 @@ Such as,
 
 
 ### `error`
-If you expect some error, just add your error message to the yaml file.
 
-Such as,
+如果你期望测试运行时报错, 那么你可以直接把 `error` `message` 添加到 `yaml` 文件 .
+
+举个例子, 
 
 ```yaml
 -   name: '导入失败-参数错误[txAmount]'
@@ -195,6 +193,6 @@ Such as,
 <br/>
 
 
-## Enjoy Yourself
+## 欢迎各位姥爷打钱
 
 

@@ -39,6 +39,7 @@ public class SimpleAutoTest extends AbstractAutoTest {
         // log.info("scenario: {}", JSON.toJSONString(getScenario()));
     }
 
+    @Override
     protected Map expect(Map param) throws RuntimeException {
         List list = (List) param.get("data");
 
