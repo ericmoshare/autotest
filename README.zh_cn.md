@@ -5,11 +5,22 @@ Autotest
 
 `Autotest` 为当前基于Java实现的企业级应用提供了一个简单的自动化测试框架, 基于模板方法设计并支持yaml文件格式.
 
-<p align="center"><img src="https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo1.gif?raw=true"></p>
+![GitHub][demo]
 
 
-## 介绍
+## 价值
 
+`Autotest` 的价值在于:
+- 提高代码的鲁棒性<br/>
+  构建自定义多测试场景, 全方位360度无死角测试你的服务.
+ 
+
+- 保证服务的可用性<br/>
+  依赖maven, 项目打包前自动运行所有的自动化测试场景.
+
+
+
+## 依赖
 你可以使用maven引入依赖包
 
 ```xml
@@ -191,12 +202,19 @@ Java
 <br/>
 
 ## 感谢
- `Autotest` 的灵感来源于 `davey.wu` 的 [Test4j][test4j] 框架.
+ `Davey.wu` 的 [Test4j][test4j] 框架给予我很大的启发.
  
 **Thanks Alibaba Group.**
 
 
+## Thanks for Donation
+![GitHub][donate]
+
+
 [test4j]: https://github.com/test4j/test4j
+[demo]: https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo1.gif
+[donate]: https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/donate.JPG
+
 
 ## 欢迎各位姥爷打钱
 

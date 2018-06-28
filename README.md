@@ -7,10 +7,20 @@ Autotest
 The `Autotest` provides a simple `framework` for modern Java-based enterprise applications - on any kind of deployment platform, 
 based on template-method design pattern which supported by `yaml`.
 
-<p align="center"><img src="https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo1.gif?raw=true"></p>
+![GitHub][demo]
 
+## Value
 
-## Installation
+The Value of `Autotest` are:
+
+- Keep your code `Robust`<br/>
+  Building multiple `Autotest` scenarios, you can examine your services with limitless imagination.
+  
+- Keep your services `Availabile`<br/>
+  Depends on Maven, you can run all your test cases before you deploy.
+
+  
+## Dependency
 
 You can use maven, whom might become your `BFF`.
 
@@ -194,13 +204,17 @@ Such as,
 <br/>
 
 
-## Enjoy Yourself
-
-
-## Credit
-The idea `Autotest`  was came from `davey.wu` in his [Test4j][test4j] project.
+## Thanks
+`Davey.wu`'s project  [Test4j][test4j] inspires me a lot.
 
 **Thanks Alibaba Group.**
 
 
+## Thanks for Donation
+![GitHub][donate]
+
+
 [test4j]: https://github.com/test4j/test4j
+[demo]: https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo1.gif
+[donate]: https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/donate.JPG
+
