@@ -209,9 +209,10 @@ Such as,
 
 **Thanks Alibaba Group.**
 
+<br/>
 
 ## Thanks for Donation
-![GitHub][donate]
+![Donate with Wechat][donate]
 
 
 [test4j]: https://github.com/test4j/test4j
