@@ -190,6 +190,13 @@ Java
 
 <br/>
 
+## 感谢
+ `Autotest` 的灵感来源于 `davey.wu` 的 [Test4j][test4j] 框架.
+ 
+**Thanks Alibaba Group.**
+
+
+[test4j]: https://github.com/test4j/test4j
 
 ## 欢迎各位姥爷打钱
 

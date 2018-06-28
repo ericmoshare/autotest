@@ -197,4 +197,10 @@ Such as,
 ## Enjoy Yourself
 
 
-[img1]:
+## Credit
+The idea `Autotest`  was came from `davey.wu` in his [Test4j][test4j] project.
+
+**Thanks Alibaba Group.**
+
+
+[test4j]: https://github.com/test4j/test4j
