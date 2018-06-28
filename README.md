@@ -3,8 +3,11 @@ Autotest
 
 [In Chinese 中文版](README.zh_cn.md)
 
+
 The `Autotest` provides a simple `framework` for modern Java-based enterprise applications - on any kind of deployment platform, 
 based on template-method design pattern which supported by `yaml`.
+
+<p align="center"><img src="https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo.gif?raw=true"></p>
 
 
 ## Installation
@@ -198,3 +201,4 @@ Such as,
 ## Enjoy Yourself
 
 
+[img1]:

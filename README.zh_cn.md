@@ -5,6 +5,8 @@ Autotest
 
 `Autotest` 为当前基于Java实现的企业级应用提供了一个简单的自动化测试框架, 基于模板方法设计并支持yaml文件格式.
 
+<p align="center"><img src="https://github.com/ericmoshare/autotest/blob/master/src/main/resources/screenshots/demo.gif?raw=true"></p>
+
 
 ## 介绍
 
