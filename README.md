@@ -19,7 +19,11 @@ The Value of `Autotest` are:
 - Keep your services `Availabile`<br/>
   Depends on Maven, you can run all your test cases before you deploy.
 
-  
+- To Avoid `The Butterfly Effect`<br/>
+  A tiny small little piece of code with a change, might destory your whole world. <br/>
+  No matter is you or the others.
+
+
 ## Dependency
 
 You can use maven, whom might become your `BFF`.
