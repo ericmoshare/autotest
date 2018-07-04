@@ -24,11 +24,6 @@ public class SimpleAutoTest extends AbstractAutoTest {
     }
 
     @Override
-    protected InputStream getResourceAsStream() throws RuntimeException {
-        return this.getClass().getClassLoader().getResourceAsStream("application.properties");
-    }
-
-    @Override
     protected void given(Map param) throws RuntimeException {
         clean("person");
         clean("auth_role");
@@ -57,5 +52,15 @@ public class SimpleAutoTest extends AbstractAutoTest {
     @Override
     protected Class getSubClass() {
         return this.getClass();
+    }
+
+    @Override
+    protected Map<String, String> getDataSourceConfiguration() throws RuntimeException {
+        Map<String, String> data = new HashMap<>();
+        data.put("url", "jdbc:mysql://127.0.0.1:3306/pangu?characterEncoding=UTF8&useSSL=false");
+        data.put("username", "root");
+        data.put("password", "12345678");
+        data.put("driverClassName", "com.mysql.jdbc.Driver");
+        return data;
     }
 }

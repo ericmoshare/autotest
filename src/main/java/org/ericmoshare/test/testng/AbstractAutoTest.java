@@ -3,7 +3,6 @@ package org.ericmoshare.test.testng;
 import org.ericmoshare.test.testng.entity.Scenario;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -13,7 +12,7 @@ import java.util.Map;
  * @author eric.mo
  * @since 2018/6/21
  */
-public abstract class AbstractAutoTest extends AbstractCongurableAutoTest {
+public abstract class AbstractAutoTest extends AbstractConfigurableContext {
 
     protected static final Logger log = LoggerFactory.getLogger(AbstractAutoTest.class);
 

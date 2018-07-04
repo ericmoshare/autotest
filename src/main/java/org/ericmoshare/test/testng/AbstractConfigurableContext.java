@@ -24,11 +24,11 @@ import java.util.Map;
  * @author eric.mo
  * @since 2018/6/25
  */
-public abstract class AbstractCongurableAutoTest extends AbstractTestNGSpringContextTests {
+public abstract class AbstractConfigurableContext extends AbstractTestNGSpringContextTests {
 
-    protected static final Logger log = LoggerFactory.getLogger(AbstractCongurableAutoTest.class);
+    protected static final Logger log = LoggerFactory.getLogger(AbstractConfigurableContext.class);
 
-    private JdbcTemplate jdbcTemplate;
+    protected JdbcTemplate jdbcTemplate;
 
     protected Scenario scenario;
 
@@ -36,7 +36,13 @@ public abstract class AbstractCongurableAutoTest extends AbstractTestNGSpringCon
     public void beforeClass() throws IllegalAccessException {
         DataSourceConfigurer configurer = new DataSourceConfigurer();
         try {
-            jdbcTemplate = configurer.init(getResourceAsStream());
+            InputStream is = getResourceAsStream();
+            if (is != null) {
+                jdbcTemplate = configurer.init(is);
+            } else {
+                jdbcTemplate = configurer.init(getDataSourceConfiguration());
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,7 +90,11 @@ public abstract class AbstractCongurableAutoTest extends AbstractTestNGSpringCon
         return jdbcTemplate;
     }
 
-    protected abstract InputStream getResourceAsStream() throws RuntimeException;
+    protected InputStream getResourceAsStream() {
+        return null;
+    }
+
+    protected abstract Map<String, String> getDataSourceConfiguration() throws RuntimeException;
 
     void validateError(RuntimeException throwable) throws RuntimeException {
 
