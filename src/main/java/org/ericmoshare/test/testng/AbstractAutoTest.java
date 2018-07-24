@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -42,7 +41,7 @@ public abstract class AbstractAutoTest extends AbstractConfigurableContext {
 
             Map resultAsMap = expect(scenario.getData());
 
-            validateExpected(expected,resultAsMap);
+            validateExpected(expected, resultAsMap);
 
         }
 
@@ -53,8 +52,6 @@ public abstract class AbstractAutoTest extends AbstractConfigurableContext {
 
     protected abstract void when(Map datas) throws Exception;
 
-    protected Map expect(Map datas) throws Exception {
-        return new HashMap();
-    }
+    protected abstract Map expect(Map datas) throws Exception;
 
 }

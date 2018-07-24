@@ -101,7 +101,7 @@ public abstract class AbstractConfigurableContext extends AbstractTestNGSpringCo
         String errorMsg = String.valueOf(scenario.getError());
 
         Assert.assertNotNull(throwable);
-        Assert.assertEquals(throwable.getMessage(), errorMsg);
+        Assert.assertEquals(String.valueOf(throwable.getMessage()), String.valueOf(errorMsg));
 
         throw throwable;
 
@@ -114,7 +114,7 @@ public abstract class AbstractConfigurableContext extends AbstractTestNGSpringCo
             Object value = entry.getValue();
 
             log.info("expected {}:{} vs {}:{}", key, value, key, resultAsMap.get(key));
-            Assert.assertEquals(String.valueOf(resultAsMap.get(key)), value);
+            Assert.assertEquals(String.valueOf(resultAsMap.get(key)), String.valueOf(value));
 
         }
     }
