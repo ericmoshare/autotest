@@ -94,20 +94,20 @@ public abstract class AbstractConfigurableContext extends AbstractTestNGSpringCo
         return null;
     }
 
-    protected abstract Map<String, String> getDataSourceConfiguration() throws RuntimeException;
+    protected abstract Map<String, String> getDataSourceConfiguration() throws Exception;
 
-    void validateError(RuntimeException throwable) throws RuntimeException {
+    void validateError(Exception throwable) throws Exception {
 
         String errorMsg = String.valueOf(scenario.getError());
 
         Assert.assertNotNull(throwable);
-        Assert.assertTrue(throwable.getMessage().contains(errorMsg));
+        Assert.assertEquals(throwable.getMessage(), errorMsg);
 
         throw throwable;
 
     }
 
-    void validateExpected(Map<String, Object> expected, Map resultAsMap) throws RuntimeException {
+    void validateExpected(Map<String, Object> expected, Map resultAsMap) throws Exception {
 
         for (Map.Entry<String, Object> entry : expected.entrySet()) {
             String key = entry.getKey();

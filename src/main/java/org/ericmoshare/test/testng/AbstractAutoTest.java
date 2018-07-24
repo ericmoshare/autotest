@@ -16,8 +16,8 @@ public abstract class AbstractAutoTest extends AbstractConfigurableContext {
 
     protected static final Logger log = LoggerFactory.getLogger(AbstractAutoTest.class);
 
-    @Test(dataProvider = "defaultData", expectedExceptions = RuntimeException.class)
-    public void test(Scenario scenario) throws RuntimeException {
+    @Test(dataProvider = "defaultData", expectedExceptions = Exception.class)
+    public void test(Scenario scenario) throws Exception {
         super.scenario = scenario;
         log.info("run scenario={}", scenario);
 
@@ -25,10 +25,10 @@ public abstract class AbstractAutoTest extends AbstractConfigurableContext {
 
         given(param);
 
-        RuntimeException throwable = null;
+        Exception throwable = null;
         try {
             when(scenario.getData());
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             throwable = e;
             e.printStackTrace();
         }
@@ -38,7 +38,7 @@ public abstract class AbstractAutoTest extends AbstractConfigurableContext {
         }
 
         if (scenario.getExpected() != null) {
-            Map<String, Object> expected = (Map) scenario.getExpected();
+            Map expected = (Map) scenario.getExpected();
 
             Map resultAsMap = expect(scenario.getData());
 
@@ -49,11 +49,11 @@ public abstract class AbstractAutoTest extends AbstractConfigurableContext {
         throw new IllegalArgumentException("Normal Execption, skiped");
     }
 
-    protected abstract void given(Map datas) throws RuntimeException;
+    protected abstract void given(Map datas) throws Exception;
 
-    protected abstract void when(Map datas) throws RuntimeException;
+    protected abstract void when(Map datas) throws Exception;
 
-    protected Map expect(Map datas) throws RuntimeException {
+    protected Map expect(Map datas) throws Exception {
         return new HashMap();
     }
 
