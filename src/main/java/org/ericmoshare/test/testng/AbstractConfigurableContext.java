@@ -103,8 +103,6 @@ public abstract class AbstractConfigurableContext extends AbstractTestNGSpringCo
         Assert.assertNotNull(throwable);
         Assert.assertEquals(String.valueOf(throwable.getMessage()), String.valueOf(errorMsg));
 
-        throw throwable;
-
     }
 
     void validateExpected(Map<String, Object> expected, Map resultAsMap) throws Exception {

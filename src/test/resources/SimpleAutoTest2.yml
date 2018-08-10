@@ -1,0 +1,21 @@
+#以下是示例yaml结构
+-   name: '[正例]10+20=30'
+    error: null
+    data:
+        a: '10'
+        b: '20'
+    request:
+        a1: '10'
+        b1: '35'
+    expected:
+        sum: '30'
+-   name: '[正例]10+35=45'
+    error: null
+    data:
+        a: '10'
+        b: '35'
+    request:
+        a1: '10'
+        b1: '35'
+    expected:
+        sum: '45'

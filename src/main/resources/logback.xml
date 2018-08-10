@@ -8,6 +8,10 @@
         </encoder>
     </appender>
 
+
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.ericmoshare" level="DEBUG"/>
+
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
     </root>

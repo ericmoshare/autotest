@@ -13,9 +13,10 @@ import java.util.Map;
  */
 public abstract class AbstractAutoTest extends AbstractConfigurableContext {
 
+    private static final String MESSAGE = "Normal Execption, skiped";
     protected static final Logger log = LoggerFactory.getLogger(AbstractAutoTest.class);
 
-    @Test(dataProvider = "defaultData", expectedExceptions = Exception.class)
+    @Test(dataProvider = "defaultData", expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = MESSAGE)
     public void test(Scenario scenario) throws Exception {
         super.scenario = scenario;
         log.info("run scenario={}", scenario);
@@ -32,7 +33,13 @@ public abstract class AbstractAutoTest extends AbstractConfigurableContext {
             e.printStackTrace();
         }
 
-        if (scenario.getError() != null) {
+        Object error = scenario.getError();
+
+        if (error == null && throwable != null) {
+            throw throwable;
+        }
+
+        if (error != null) {
             validateError(throwable);
         }
 
@@ -45,7 +52,7 @@ public abstract class AbstractAutoTest extends AbstractConfigurableContext {
 
         }
 
-        throw new IllegalArgumentException("Normal Execption, skiped");
+        throw new IllegalArgumentException(MESSAGE);
     }
 
     protected abstract void given(Map datas) throws Exception;

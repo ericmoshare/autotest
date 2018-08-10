@@ -1,6 +1,7 @@
 package org.ericmoshare.test;
 
 import org.ericmoshare.test.testng.AbstractAutoTest;
+import org.ericmoshare.test.testng.annotation.Given;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,11 +24,18 @@ public class SimpleAutoTest extends AbstractAutoTest {
         super();
     }
 
+
     @Override
     protected void given(Map param) throws RuntimeException {
         clean("person");
         clean("auth_role");
     }
+
+    @Given
+    public void run(String aaa) {
+        System.out.println("\n\nrun like never before");
+    }
+
 
     @Override
     protected void when(Map param) throws RuntimeException {
